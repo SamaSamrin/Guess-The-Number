@@ -9,22 +9,15 @@ import random
 
 # computer generates a number and the user tries to guess it correctly
 def guess_computer(limit):
-    print("Guessing a number between 1 and", limit)
-    number = random.randint(1,limit)
-    
+    def guess_computer(number):
     guess = 0;
-    for i in range(10):
+    while guess!=number:
         guess = int(input("Enter your guess:"))
-        print(10-i, "tries left")
-        if guess==number:
-            print("Congrats! You guessed it right!")
-            break
-        elif guess<number:
+        if guess<number:
             print("Too low")
         elif guess>number:
             print("Too high")
-    if i==10:
-        print("The number was", number)
+    print("Congrats! That's correct!")
 
 #user provides a number and the computer tries to guess it correctly
 def guess_user(number):
